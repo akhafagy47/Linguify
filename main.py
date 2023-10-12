@@ -195,7 +195,7 @@ def send_email_notification_OUTLOOK(company,transcriptions):
 
     # Send the email notification
     email_body = f"Subject: {subject}\n\n{message}"
-    server.sendmail("linguify@hotmail.com", "abdul_khafagy2004@hotmail.com", email_body)  # (From, To, Message)
+    server.sendmail("linguify@hotmail.com", "test@hotmail.com", email_body)  # (From, To, Message)
 
     # Close the connection to the SMTP server
     server.quit()
@@ -288,7 +288,7 @@ def send_email_notification(credentials_file_path,company,transcriptions):
     
     message = email.message.EmailMessage()
     message['From'] = 'linguify@hotmail.com'
-    message['To'] = 'abdul_khafagy2004@hotmail.com'
+    message['To'] = 'test@hotmail.com'
     message['Subject'] = f"Linguify Usage Notification: {company}"
     message.set_content(f"Company Name: {company}\nDate: {date} \nTranscriptions: {transcriptions} voicemail(s)\nTotal Cost: {transcriptions} x $4.59 = ${transcriptions*4.59}")  # Do you want to add GST
 
@@ -307,7 +307,7 @@ def send_email_notification(credentials_file_path,company,transcriptions):
         service.users().messages().send(userId='me', body=email_message).execute()
     
     except Exception as e:
-        print(f"Error: {e}\nPlease contact the provider (abdul_khafagy2004@hotmail.com).\n")
+        print(f"Error: {e}\nPlease contact the provider (test@hotmail.com).\n")
 
 
 def get_api_key():
@@ -590,6 +590,6 @@ def check_email_for_voicemails(credentials_file_path,company):
             print('There are no New Voicemails!')
             
     except Exception as e:
-        print(f"Error occurred: {e}\nPlease contact the provider (abdul_khafagy2004@hotmail.com).\n")
+        print(f"Error occurred: {e}\nPlease contact the provider (test@hotmail.com).\n")
 
 '''------------------------------------------------------------------------------------------------------'''
